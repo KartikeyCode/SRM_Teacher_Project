@@ -13,6 +13,23 @@ class TimetableController extends Controller
     public function get_all_periods(Request $request){
         return response()->json(['periods'=>timetable::all()]);
     }
+
+    public function get_time_table(Request $request){
+        $fields = $request->validate([
+            'teacher_id' =>  'required|string',
+    ]);
+    if($timetable = timetable::where('teacher_id',$fields['teacher_id'])->get()){
+        return response()->json(["timetable"=>$timetable],200);
+
+    }else{
+        return response("user/periods not found",404);
+    }
+
+        
+    }
+
+
+
     public function add_period(Request $request){
         try{
             $fields = $request->validate([
