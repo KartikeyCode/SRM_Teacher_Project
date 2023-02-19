@@ -8,6 +8,7 @@ function Page() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="Teachers" element={<Teachers />} />
+        {/* <Route path="/:id" component={ItemPage} /> */}
       </Routes>
     </BrowserRouter>
   )
