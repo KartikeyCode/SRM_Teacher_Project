@@ -10,7 +10,7 @@ class TeacherController extends Controller
 {
 
     public function get_all_teachers(Request $request){
-        return response()->json(['teachers'=>teacher::all()]);
+        return response()->json(teacher::all());
     }
 
 

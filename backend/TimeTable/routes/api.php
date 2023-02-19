@@ -29,6 +29,7 @@ Route::post('/timetable',[TimetableController::class,'add_period']);
 
 // GET routes
 Route::get('/teachers',[TeacherController::class,'get_all_teachers']);
+Route::get('/periods',[TimetableController::class,'get_all_periods']);
 
 
 
