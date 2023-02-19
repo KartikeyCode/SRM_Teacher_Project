@@ -17,7 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// POST routes
 Route::post('/subject',[SubjectController::class,'add_subject']);
 Route::post('/teacher',[TeacherController::class,'add_teacher']);
 Route::post('/timetable',[TimetableController::class,'add_period']);
+
+
+
+
+
+
+// GET routes
+Route::get('/teachers',[TeacherController::class,'get_all_teachers']);
+
+
+
+// Route::get('/timetable',[TimetableController::class,'index']);

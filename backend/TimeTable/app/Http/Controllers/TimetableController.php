@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class TimetableController extends Controller
 {
+
     public function add_period(Request $request){
         try{
 
