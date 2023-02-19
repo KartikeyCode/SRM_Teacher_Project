@@ -15,3 +15,7 @@ function Page() {
 }
 
 export default Page
+
+/*
+figure out dynamic routing and useparams
+*/
