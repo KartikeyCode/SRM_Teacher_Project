@@ -1,8 +1,9 @@
 import './App.css';
-
+import LOGO from "./SRMLogo.png"
 function App() {
   return (
     <>
+    <img className="Logo" src={LOGO}></img>
     <div className='Page'>
     <div className='ButtonContainer'>
     <button className='Button'>View Teachers</button>

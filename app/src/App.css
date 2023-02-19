@@ -1,14 +1,14 @@
 body{
-  display: flex;
-  justify-content: center;
   background-color: white;
 }
 .Page{
   height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .ButtonContainer{
+  margin-bottom: 100px;
   align-items: center;
   justify-content:space-evenly;
   flex-direction: column;
@@ -29,4 +29,14 @@ body{
   background-color: blue;
   padding: 30px;
   width: 70%;
+  cursor: pointer;
+}
+Button:hover{
+  transform: scale(1.1);
+}
+
+.Logo{
+  width: 150px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
