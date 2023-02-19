@@ -1,15 +1,22 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import LOGO from "./SRMLogo.png"
 import { Link } from "react-router-dom"
 import axios from "axios"
 
 function Teachers() {
+  const [teachers, setTeachers] = useState([])
   useEffect(() => {
     const get_teachers = async () => {
       try {
         const url = "http://localhost:8000/api/teachers"
-        const resp = await axios.get(url, {})
-        console.log(resp)
+        await axios.get(url).then((res) => {
+          console.log(res)
+          let teachers = []
+          res.data.forEach((element) => {
+            teachers.push(element)
+          })
+          setTeachers(teachers)
+        })
       } catch (error) {
         console.log(error)
       }
@@ -33,13 +40,19 @@ function Teachers() {
               <tr>
                 <th>Teacher Name</th>
                 <th>Teacher ID</th>
+                <th>Subject</th>
                 <th>Time Table Link</th>
               </tr>
-              <tr>
-                <td>K Janani</td>
-                <td>2423427834</td>
-                <td>Link</td>
-              </tr>
+              {teachers.map((teacher, i) => {
+                return (
+                  <tr>
+                    <td>{teacher.Name}</td>
+                    <td>{teacher.Teacher_id}</td>
+                    <td>{teacher.Subject}</td>
+                    <td>Link</td>
+                  </tr>
+                )
+              })}
             </table>
           </div>
         </div>
@@ -63,9 +76,10 @@ i need to add filters as per requirements to make ux better
 
 
 TODO:
-1)dynamically render all teachers
-2)make dynamic links for their periods on timw table
+1)dynamically render all teachers done
+2)make dynamic links for their periods on time table
 3)design the timetable
+4)add filters
 
 
 */
