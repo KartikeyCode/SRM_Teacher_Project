@@ -21,6 +21,8 @@ body{
 }
 
 .Button{
+  text-align: center;
+  font-family: sans-serif;
   color: white;
   font-weight: 600;
   border-radius: 20px;
@@ -28,10 +30,10 @@ body{
   border: none;
   background-color: blue;
   padding: 30px;
-  width: 70%;
+  width: 200px;
   cursor: pointer;
 }
-Button:hover{
+.Button:hover{
   transform: scale(1.1);
 }
 
@@ -39,4 +41,36 @@ Button:hover{
   width: 150px;
   margin-left: 10px;
   margin-top: 10px;
+}
+.Link{
+  text-decoration: none;
+  color: white;
+}
+.Back{
+  border-radius: 30px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+}
+.Upper{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.ButtonContainer2{
+  margin-bottom: 100px;
+  align-items: center;
+  justify-content:space-evenly;
+  flex-direction: column;
+  display: flex;
+  border-radius: ;
+  width: 60%;
+  height: 70%;
+  background-color: white;
+  border: 5px solid #C8A008;
 }

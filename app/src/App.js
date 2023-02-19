@@ -1,13 +1,20 @@
 import './App.css';
 import LOGO from "./SRMLogo.png"
+import {Route,Routes,BrowserRouter,Link} from "react-router-dom";
 function App() {
   return (
     <>
     <img className="Logo" src={LOGO}></img>
     <div className='Page'>
     <div className='ButtonContainer'>
-    <button className='Button'>View Teachers</button>
-    <button className='Button'>View Cameras</button>
+      <Link className="Link"to="Teachers">
+    <div className='Button'>
+      View Teachers
+      </div>
+      </Link>
+    <div className='Button'>
+      View Cameras
+    </div>
     </div>
     </div>
     </>
