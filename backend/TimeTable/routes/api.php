@@ -34,7 +34,3 @@ Route::get('/periods',[TimetableController::class,'get_all_periods']);
 
 //FILTER routes
 Route::post('/timetable',[TimetableController::class,'get_time_table']);
-
-
-
-// Route::get('/timetable',[TimetableController::class,'index']);

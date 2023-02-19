@@ -14,6 +14,15 @@ class TimetableController extends Controller
         return response()->json(['periods'=>timetable::all()]);
     }
 
+
+
+    /*
+    Logic:
+    use dynamic routes to send teacher id to page, that user id then gets taken to a constant through
+    useParams(). after that a post request is run on this route using that param as body, if the param is altered
+    a 404 is dispkayed and the user is redirected back to teachers page through settimeout
+    */ 
+
     public function get_time_table(Request $request){
         $fields = $request->validate([
             'teacher_id' =>  'required|string',
