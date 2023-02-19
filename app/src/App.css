@@ -1,0 +1,32 @@
+body{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.Page{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.ButtonContainer{
+  align-items: center;
+  justify-content:space-evenly;
+  flex-direction: column;
+  display: flex;
+  border-radius: ;
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  border: 5px solid #C8A008;
+}
+
+.Button{
+  color: white;
+  font-weight: 600;
+  border-radius: 20px;
+  font-size: 40px;
+  border: none;
+  background-color: blue;
+  padding: 30px;
+  width: 70%;
+}
