@@ -19,4 +19,5 @@ class SubjectController extends Controller
         ]);
         return response("subject added!",201);
     }
+    
 }
