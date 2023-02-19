@@ -14,7 +14,20 @@ function Teachers(){
         </div>
     <div className='Page'>
     <div className='ButtonContainer2'>
-    
+        <div className="TableDiv">
+    <table>
+        <tr>
+            <th>Teacher Name</th>
+            <th>Teacher ID</th>
+            <th>Time Table Link</th>
+        </tr>
+        <tr>
+            <td>K Janani</td>
+            <td>2423427834</td>
+            <td>Link</td>
+        </tr>
+    </table>
+        </div>
     </div>
     </div>
     </>
