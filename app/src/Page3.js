@@ -29,7 +29,16 @@ const Timetable = () => {
     <div>
       {/* make the time table cards here */}
       {periods.map((period, i) => {
-        return <div className="">{period.section}</div>
+        return (
+          <div className="Page3_column">
+            <h1 className="">Teacher: {period.teacher}</h1>
+            <h1 className="">Section: {period.section}</h1>
+            <h1 className="">Subject: {period.subject}</h1>
+            <h1 className="">Day Order: {period.day_order}</h1>
+            <h1 className="">Class Start: {period.class_start}</h1>
+            <h1 className="">Class End: {period.class_end}</h1>
+          </div>
+        )
       })}
     </div>
   )
