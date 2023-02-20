@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 
 const Timetable = () => {
   const [periods, setPeriods] = useState([])
-  const [name, setName] = useState('')
+  const [name, setName] = useState("")
   const params = useParams()
 
   useEffect(() => {
@@ -16,9 +16,9 @@ const Timetable = () => {
           let timetable = []
           res.data.forEach((element) => {
             timetable.push(element)
+            setName(element.teacher)
           })
           setPeriods(timetable)
-          setName(res.data.teacher)
         })
       } catch (error) {
         console.log(error)
@@ -29,12 +29,10 @@ const Timetable = () => {
 
   return (
     <div>
-      
-      {/* make the time table cards here */}
+      <h1 className="">Teacher: {name}</h1>
       {periods.map((period, i) => {
         return (
           <div className="Page3_column">
-            <h1 className="">Teacher: {period.teacher}</h1>
             <h1 className="">Section: {period.section}</h1>
             <h1 className="">Subject: {period.subject}</h1>
             <h1 className="">Day Order: {period.day_order}</h1>
