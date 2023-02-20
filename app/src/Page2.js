@@ -51,7 +51,7 @@ function Teachers() {
                     <td>{teacher.Teacher_id}</td>
                     <td>{teacher.Subject}</td>
                     <td>
-                      <Link to={`/Timetable/${teacher.Teacher_id}`}>Link</Link>
+                      <Link to={`Timetable/${teacher.Teacher_id}`}>Link</Link>
                     </td>
                   </tr>
                 )

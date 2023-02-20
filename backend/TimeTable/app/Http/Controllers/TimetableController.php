@@ -28,7 +28,7 @@ class TimetableController extends Controller
             'teacher_id' =>  'required|string',
     ]);
     if($timetable = timetable::where('teacher_id',$fields['teacher_id'])->get()){
-        return response()->json(["timetable"=>$timetable],200);
+        return response()->json($timetable,200);
 
     }else{
         return response("user/periods not found",404);
