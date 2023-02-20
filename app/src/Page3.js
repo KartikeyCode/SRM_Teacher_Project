@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 
 const Timetable = () => {
   const [periods, setPeriods] = useState([])
+  const [name, setName] = useState('')
   const params = useParams()
 
   useEffect(() => {
@@ -17,6 +18,7 @@ const Timetable = () => {
             timetable.push(element)
           })
           setPeriods(timetable)
+          setName(res.data.teacher)
         })
       } catch (error) {
         console.log(error)
@@ -27,6 +29,7 @@ const Timetable = () => {
 
   return (
     <div>
+      
       {/* make the time table cards here */}
       {periods.map((period, i) => {
         return (

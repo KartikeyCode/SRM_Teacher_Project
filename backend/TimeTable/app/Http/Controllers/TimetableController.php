@@ -35,6 +35,10 @@ class TimetableController extends Controller
     }
     }
 
+    public function index(Request $request){
+        return response("hi",200);
+    }
+
 
 
 
