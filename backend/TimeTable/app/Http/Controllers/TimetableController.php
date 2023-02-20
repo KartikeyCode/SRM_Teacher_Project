@@ -33,12 +33,13 @@ class TimetableController extends Controller
     }else{
         return response("user/periods not found",404);
     }
-
-        
     }
 
 
 
+
+
+    
     public function add_period(Request $request){
         try{
             $fields = $request->validate([

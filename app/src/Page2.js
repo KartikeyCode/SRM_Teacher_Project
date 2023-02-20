@@ -5,6 +5,7 @@ import axios from "axios"
 
 function Teachers() {
   const [teachers, setTeachers] = useState([])
+
   useEffect(() => {
     const get_teachers = async () => {
       try {
@@ -26,7 +27,7 @@ function Teachers() {
   return (
     <>
       <div className="Upper">
-        <img className="Logo" src={LOGO}></img>
+        <img className="Logo" src={LOGO} alt="Srm logo"></img>
         <Link to="/" className="Link">
           <div className="Back">
             <h1>Go Back</h1>
@@ -49,7 +50,9 @@ function Teachers() {
                     <td>{teacher.Name}</td>
                     <td>{teacher.Teacher_id}</td>
                     <td>{teacher.Subject}</td>
-                    <td>Link</td>
+                    <td>
+                      <Link to={`/Timetable/${teacher.Teacher_id}`}>Link</Link>
+                    </td>
                   </tr>
                 )
               })}
