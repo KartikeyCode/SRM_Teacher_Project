@@ -27,7 +27,13 @@ class TimetableController extends Controller
         $fields = $request->validate([
             'teacher_id' =>  'required|string',
     ]);
-    if($timetable = timetable::where('teacher_id',$fields['teacher_id'])->get()){
+    if($timetable = timetable::where('teacher_id',$fields['teacher_id'])->select('teacher',
+    'teacher_id',
+    'day_order',
+    'subject',
+    'section',
+    'class_start',
+    'class_end')->get()){
         return response()->json($timetable,200);
 
     }else{

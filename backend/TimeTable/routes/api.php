@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // POST routes
-
 Route::post('/teacher',[TeacherController::class,'add_teacher']);
 Route::post('/periods',[TimetableController::class,'add_period']);
 
@@ -31,3 +30,4 @@ Route::get('/index',[TimetableController::class,'index']);
 
 //FILTER routes
 Route::post('/timetable',[TimetableController::class,'get_time_table']);
+Route::post('/teacher',[TeacherController::class,'get_teacher_name']);

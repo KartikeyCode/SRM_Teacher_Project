@@ -10,7 +10,25 @@ class TeacherController extends Controller
 {
 
     public function get_all_teachers(Request $request){
-        return response()->json(teacher::all());
+        return response()->json(teacher::select("Name","Subject","Teacher_id")->get());
+    }
+
+
+    public function get_teacher_name(Request $request){
+        $fields = $request->validate([
+            'teacher_id' =>  'required|string',
+    ]);
+    if($teacher = teacher::where('teacher_id',$fields['teacher_id'])){
+        $teacher = teacher::where('teacher_id',$fields['teacher_id'])->get('Name')->first();
+        return response()->json($teacher,200);
+
+    }else{
+        return response("teacher not found",404);
+    }
+    }
+
+    public function index(Request $request){
+        return response("hi",200);
     }
 
 

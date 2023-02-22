@@ -8,6 +8,17 @@ const Timetable = () => {
   const params = useParams()
 
   useEffect(() => {
+    const get_teacher = async () => {
+      try {
+        const url = "http://localhost:8000/api/teacher"
+        const resp = await axios.post(url, { teacher_id: params.Teacher_id })
+        console.log(resp.data.Name)
+        let name = resp.data.Name
+        setName(name)
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
     const get_timetable = async () => {
       try {
         const url = "http://localhost:8000/api/timetable"
@@ -16,7 +27,6 @@ const Timetable = () => {
           let timetable = []
           res.data.forEach((element) => {
             timetable.push(element)
-            setName(element.teacher)
           })
           setPeriods(timetable)
         })
@@ -24,6 +34,7 @@ const Timetable = () => {
         console.log(error)
       }
     }
+    get_teacher()
     get_timetable()
   }, [params])
 
